@@ -1,8 +1,9 @@
 <html>
 <head>
-  <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+  <meta http-equiv="pragma" content="no-cache">
+  <link rel="stylesheet" href="{{ assets/cards.css | prepend: site.baseurl }}">
 </head>
 <body>
-  <div>{% include selfloop url='/' sort="url" reverse=false all=false %}</div>
+{{ content }}
 </body>
 </html>
