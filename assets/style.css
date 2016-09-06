@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  font: 100%/1.4em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  color: #222;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  width: 100%
+}
+
+body,
+.panel {
+  background-color: #fff;
+}
+
+header,
+footer {
+  flex: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.slideout-menu {
+  position: fixed;
+  left: auto; 
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 256px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  position:relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: flex;
+}
+
+.menu {
+  background-color: #1D1F20;
+}
+
+.panel {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  flex: 1;
+}
+
+.site-title {
+    margin: 0 0 1em;
+    color: #4B5;
+    font-weight: 400;
+    font-size: 2.5em;
+    text-transform: capitalize;
+}
+
+.site-title a {
+  color: #4B5;
+}
+
+.content-box {
+  text-align: left;
+  position: relative;
+  flex-direction: column;
+  flex: 1;
+  padding: 0.5em;
+  background-color: white;
+  border-radius: 5px;
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.content-box-header {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+  font-weight: 400;
+  display: flex;
+}
+
+.article {
+  flex: 1 0 auto;
+  padding: 1.5em 1.5em 0;
+  width: 100%
+}
+
+.panel-header {
+  margin-top: 2.5em;
+  width: 100%;
+  padding: 0 2.5em;
+}
+
+.panel-footer {
+  margin: 1em auto;
+}
+
+.icon-hamburger {
+  position: relative;
+  font-size: 2em;
+  padding: 0.08em;
+  border: none;
+  display: flex;
+  width: 1em;
+  border-top: 0.5em double #000;
+  border-bottom: 0.17em solid #000;
+  background-color: #fff;
+  float: right;
+}

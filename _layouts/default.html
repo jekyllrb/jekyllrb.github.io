@@ -1,9 +1,19 @@
-<html>
-<head>
-  <meta http-equiv="pragma" content="no-cache">
-  <link rel="stylesheet" href="{{ assets/cards.css | prepend: site.baseurl }}">
-</head>
-<body>
-{{ content }}
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>{% include head.html %}</head>
+    <body>
+      <nav id="menu" class="menu"></nav>
+      <div id="panel" class="panel">
+        <header class="panel-header">
+          <button class="icon-hamburger js-slideout-toggle"></button>
+          <h1 class="site-title"><a href="{{site.baseurl}}">{{ site.title }}</a></h1>
+        </header>
+        <section class="content-box">
+          <div class="content-box-header"></div>
+          <div class="article">{{ content }}</div>
+        </section>
+        <footer class="panel-footer"></footer>
+      </div>
+      {% include scripts.html %}
+  </body>
 </html>
