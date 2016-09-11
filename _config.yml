@@ -1,3 +1,10 @@
 title: jekyllrb.github.io
 description: the official unoffical jekyllrb collection designed to be 100% compatible with github pages
-baseurl: '/'
+baseurl: "/"
+url: http://jekyll.github.io
+twitter: simpyll
+github: jekyllrb
+repository: jekyllrb.github.io
+branch: gh-pages
+google_analytics: # UA-71593532-1
+markdown: kramdown
