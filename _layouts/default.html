@@ -2,17 +2,19 @@
 <html lang="en">
   <head>{% include head.html %}</head>
     <body>
-      <nav id="menu" class="menu"></nav>
+      <nav id="menu" class="menu">{% include search.html %}</nav>
       <div id="panel" class="panel">
         <header class="panel-header">
           <button class="icon-hamburger js-slideout-toggle"></button>
           <h1 class="site-title"><a href="{{site.baseurl}}">{{ site.title }}</a></h1>
         </header>
         <section class="content-box">
-          <div class="content-box-header"></div>
+          <div class="content-box-header">
+            {% include breadcrumbs %}
+          </div>
           <div class="article">{{ content }}</div>
         </section>
-        <footer class="panel-footer"></footer>
+        {% include footer %}
       </div>
       {% include scripts.html %}
   </body>
