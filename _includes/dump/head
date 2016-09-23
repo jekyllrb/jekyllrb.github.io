@@ -1,0 +1,52 @@
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="MobileOptimized" content="320">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+<meta property="og:type" content="website" />
+  {% if page.id %}
+<meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
+  {% else %}
+<meta property="og:url" content="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
+  {% endif %}
+  {% if page.fb-img %}
+<meta property="og:image" content="{{ page.fb-img }}" />
+  {% elsif site.avatar %}
+<meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
+  {% else %}
+<meta property="og:image" content="" />
+  {% endif %}
+  {% if page.description %}
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">{% endif %}
+  {% if page.tags != nil or page.title == tags %}
+<meta name="keywords" content="{{ page.tags }}">
+<link rel="stylesheet" href="{{ '/assets/css/tags.css' | prepend:site.baseurl }}">
+  {% endif %}
+  {% if site.author %}
+<meta name="author" content="{{ site.author }}">
+  {% endif %}
+
+<link rel="stylesheet" href="{{ 'assets/style.css' | prepend:site.baseurl }}">
+<link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.ico">
+
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}atom.xml">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+<link rel="canonical" href="{{ page.url | replace:'index.html','' }}">
+
+<title>
+  {% if page.title == "Home" %}
+    {{ site.title | capitalize }} &middot; {{ site.description }}
+  {% else %}
+    {{ page.title | capitalize }} &middot; {{ site.title }}
+  {% endif %}
+</title>
+  
+{% if site.analytics %}
+  {% include analytics.html %}
+{% endif %}
+
+</head>
